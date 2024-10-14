@@ -9,7 +9,8 @@ public class PrizePool : MonoBehaviour, IPrizePool
     [SerializeField] private Transform spinPanel;
 
     [Header("Prize List")]
-    [SerializeField, Tooltip("Prize Data can be added with Integers")] private List<int> prizeValues; // mengisi semua angka untuk penampungan Integer
+    [SerializeField, Tooltip("Prize Data can be added with Integers")] 
+    private List<int> prizeValues; // mengisi semua angka untuk penampungan Integer
 
     private List<PrizeBox> _prizePools = new List<PrizeBox>();
 

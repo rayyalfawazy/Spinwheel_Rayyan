@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpinResultUI : MonoBehaviour
 {
     [Header("Result UI")]
-    [SerializeField] Transform resultPanel;
-    [SerializeField] TMP_Text resultText;
+    public Transform resultPanel;
+    public TMP_Text resultText;
+    public Button claimButton;
 
     private void Start()
     {
@@ -27,5 +29,10 @@ public class SpinResultUI : MonoBehaviour
     {
         resultPanel.gameObject.SetActive(true);
         resultText.text = $"Anda mendapatakan ${selectedPrize.PrizeValue}";
+    }
+
+    public void HideSpinResult()
+    {
+        resultPanel.gameObject.SetActive(false);
     }
 }
