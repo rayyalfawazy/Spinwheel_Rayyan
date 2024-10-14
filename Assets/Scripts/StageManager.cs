@@ -8,7 +8,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] private SpinResultUI spinResult;
     [SerializeField] private Button quitButton;
 
-    [SerializeField] private int prizeAmount;
+    private int prizeAmount;
     private IPrizePool prizePool;
 
     void Start()

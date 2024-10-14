@@ -549,7 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountText: {fileID: 1269071799}
   spinResult: {fileID: 272888513}
-  quitButton: {fileID: 0}
+  quitButton: {fileID: 1827949162}
   prizeAmount: 0
 --- !u!114 &272888513
 MonoBehaviour:
@@ -974,10 +974,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1023,9 +1023,9 @@ RectTransform:
   - {fileID: 1637479258}
   - {fileID: 332861763}
   - {fileID: 1208372176}
+  - {fileID: 1827949161}
   - {fileID: 1269071797}
   - {fileID: 1860914640}
-  - {fileID: 1827949161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 1827949163}
   - component: {fileID: 1827949162}
   m_Layer: 5
-  m_Name: Button
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1697,7 +1697,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827949160}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
