@@ -5,17 +5,17 @@ using UnityEngine.UI;
 public class PrizePool : MonoBehaviour, IPrizePool
 {
     [Header("Prize Pools")]
-    [SerializeField] private PrizeData prizePrefab;
+    [SerializeField] private PrizeBox prizePrefab;
     [SerializeField] private Transform spinPanel;
-    [SerializeField] private int prizeToPool;
-    [Header("Prize List")]
-    [SerializeField] private List<PrizeDataSO> prizeDataSO;
 
-    private List<PrizeData> _prizePools = new List<PrizeData>();
+    [Header("Prize List")]
+    [SerializeField, Tooltip("Prize Data can be added with Integers")] private List<int> prizeValues; // mengisi semua angka untuk penampungan Integer
+
+    private List<PrizeBox> _prizePools = new List<PrizeBox>();
 
     void Start()
     {
-        PrizePoolSetup(prizeToPool);
+        PrizePoolSetup(prizeValues.Count);
     }
 
     private void PrizePoolSetup(int poolAmount)
@@ -23,7 +23,7 @@ public class PrizePool : MonoBehaviour, IPrizePool
         for (int i = 0; i < poolAmount; i++)
         {
             var prize = Instantiate(prizePrefab, spinPanel);
-            prize.Initialize(prizeDataSO[Random.Range(0, prizeDataSO.Count)]);
+            prize.Initialize(prizeValues[i]);
             _prizePools.Add(prize);
         }
     }
@@ -34,7 +34,7 @@ public class PrizePool : MonoBehaviour, IPrizePool
         return _prizePools.Count;
     }
 
-    public PrizeData GetPrize(int index)
+    public PrizeBox GetPrize(int index)
     {
         return _prizePools[index];
     }

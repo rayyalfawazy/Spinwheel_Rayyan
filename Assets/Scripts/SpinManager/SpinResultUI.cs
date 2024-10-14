@@ -1,10 +1,13 @@
+using TMPro;
 using UnityEngine;
 
 public class SpinResultUI : MonoBehaviour
 {
+    [Header("Result UI")]
     [SerializeField] Transform resultPanel;
+    [SerializeField] TMP_Text resultText;
 
-    private void OnEnable()
+    private void Start()
     {
         if (SpinManager.Instance != null)
         {
@@ -20,8 +23,9 @@ public class SpinResultUI : MonoBehaviour
         }
     }
 
-    private void DisplaySpinResult(PrizeData selectedPrize)
+    public void DisplaySpinResult(PrizeBox selectedPrize)
     {
-        // Tambahkan logika untuk menampilkan hasil spin ke UI
+        resultPanel.gameObject.SetActive(true);
+        resultText.text = $"Anda mendapatakan ${selectedPrize.PrizeValue}";
     }
 }

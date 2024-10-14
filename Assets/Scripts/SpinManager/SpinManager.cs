@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SpinManager : MonoBehaviour
@@ -8,16 +9,16 @@ public class SpinManager : MonoBehaviour
     public static SpinManager Instance { get; private set; } // Singleton implementation
 
     [Header("Spinner Settings")]
-    [SerializeField] private Button spinButton;
     [SerializeField] private float spinDuration; // Durasi total perputaran
     [SerializeField] private float initialSpeed; // Kecepatan awal
     [SerializeField] private float finalSpeed;   // Kecepatan akhir saat berhenti
 
     private bool isSpinning = false;
+    public bool IsSpinning { get { return isSpinning; } }
     private IPrizePool prizePool;
 
-    public event System.Action<PrizeData> OnSpinCompleted; // Observer pattern
-
+    public event System.Action<PrizeBox> OnSpinCompleted; // Observe Spin Complete
+    
     private void Awake()
     {
         // Singleton initialization
@@ -35,18 +36,11 @@ public class SpinManager : MonoBehaviour
     void Start()
     {
         prizePool = GetComponent<IPrizePool>(); // Dependency inversion
-        HandleSpin();
     }
 
-    private void HandleSpin()
+    public void HandleSpin()
     {
-        spinButton.onClick.AddListener(() =>
-        {
-            if (!isSpinning)
-            {
-                StartCoroutine(SpinWheel());
-            }
-        });
+        StartCoroutine(SpinWheel());
     }
 
     private IEnumerator SpinWheel()
@@ -54,13 +48,13 @@ public class SpinManager : MonoBehaviour
         isSpinning = true;
 
         // Step 1: Pilih index target secara acak di awal spin
-        int targetIndex = Random.Range(0, prizePool.GetPrizeCount());
+        int targetIndex = Random.Range(0, prizePool.GetPrizeCount()); // Index Target Pilihan
 
-        int currentIndex = 0;
-        float spinDuration = this.spinDuration;
-        float initialSpeed = this.initialSpeed;
-        float finalSpeed = this.finalSpeed;
-        int totalPrizeCount = prizePool.GetPrizeCount();
+        int currentIndex = 0; // Indext yang ter-highlight
+        float spinDuration = this.spinDuration; // Pengambilan durasi spin.
+        float initialSpeed = this.initialSpeed; // Pengambilan kecepatan awal.
+        float finalSpeed = this.finalSpeed; // Pengambilan kecepatan sebelum berhenti.
+        int totalPrizeCount = prizePool.GetPrizeCount(); // Menghitung jumlah seluruh prize yang masuk.
 
         int totalSpinCycles = Random.Range(3, 5); // Untuk membuat roda spin beberapa putaran penuh sebelum melambat
         int targetFullIndex = totalSpinCycles * totalPrizeCount + targetIndex; // Index total menuju target dengan beberapa putaran penuh

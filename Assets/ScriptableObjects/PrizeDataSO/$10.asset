@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e42a0b76a3913045915c1fc982afbde, type: 3}
-  m_Name: $!0
+  m_Name: $10
   m_EditorClassIdentifier: 
   prizeValue: 10

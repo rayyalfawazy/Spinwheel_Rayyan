@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 944414725965735819}
   - component: {fileID: 3949975468424110883}
   - component: {fileID: 7945320554616076558}
-  - component: {fileID: 8926362531338325769}
+  - component: {fileID: 9184127932714712284}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8926362531338325769
+--- !u!114 &9184127932714712284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,8 +220,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7799092789808254095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff91b3030914f3c4b81b4b77552dabcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dbfae9046f47404faf199f1ddc37639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prizeNameText: {fileID: 6169041641919409468}
-  prizeImage: {fileID: 7945320554616076558}
